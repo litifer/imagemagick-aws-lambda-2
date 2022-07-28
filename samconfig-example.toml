@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "image-magick"
+s3_bucket = "<bucket-name-here>"
+s3_prefix = "image-magick"
+region = "<aws-region-here>"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []

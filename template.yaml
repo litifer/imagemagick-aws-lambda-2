@@ -1,11 +1,11 @@
-AWSTemplateFormatVersion: 2010-09-09
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
   Static build of ImageMagick for Amazon Linux 2,
   including convert, mogrify and identify tools
   and support for jpeg, gif, png, tiff and webm formats.
 
-  Check out https://github.com/serverlesspub/imagemagick-aws-lambda-2
+  Check out https://github.com/litifer/imagemagick-aws-lambda-2
   for more information.
 Resources:
   ImageMagickLayer:
@@ -17,6 +17,7 @@ Resources:
       CompatibleRuntimes:
         - nodejs10.x
         - nodejs12.x
+        - nodejs16.x
         - python3.8
       LicenseInfo: https://imagemagick.org/script/license.php
       RetentionPolicy: Retain
@@ -27,6 +28,7 @@ Outputs:
     Value: !Ref ImageMagickLayer
 
 Metadata:
+  BuildMethod: makefile
   AWS::ServerlessRepo::Application:
     Name: image-magick-lambda-layer
     Description: >
@@ -35,11 +37,9 @@ Metadata:
 
       Including convert, mogrify and identify tools
       and support for jpeg, gif, png, tiff and webm formats.
-    Author: Gojko Adzic
+    Author: Harish Kumar
     SpdxLicenseId: ImageMagick
-    LicenseUrl: LICENSE.txt
-    ReadmeUrl: README-SAR.md 
-    Labels: ['layer', 'image', 'lambda', 'imagemagick']
-    HomePageUrl: https://github.com/serverlesspub/imagemagick-aws-lambda-2
+    Labels: ["layer", "image", "lambda", "imagemagick"]
+    HomePageUrl: https://github.com/litifer/imagemagick-aws-lambda-2
     SemanticVersion: 1.0.0
-    SourceCodeUrl: https://github.com/serverlesspub/imagemagick-aws-lambda-2
+    SourceCodeUrl: https://github.com/litifer/imagemagick-aws-lambda-2

@@ -3,3 +3,5 @@ result
 .samcli
 layer.zip
 output.yaml
+samconfig.toml
+.aws-sam/*
